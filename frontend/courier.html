@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <title>Courier page</title>
+</head>
+<body class="dark">
+    <nav class="navbar">
+        <ul class="navbar--list">
+            <li class="navbar__item navbar__item--first"><a href="/index.html">Домой</a></li>
+            <li class="navbar__item"><a href="/login.html">Выйти</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="main-grid">
+            <section class="sidebar--container">
+                <ul class="sidebar__list">
+                    <li class="sidebar__list__item center sidebar__list__item--active" data-content-id="my-workspace">Личный кабинет</li>
+                    <li class="sidebar__list__item center" data-content-id="free-orders-list">Свободные заказы</li>
+                    <li class="sidebar__list__item center" data-content-id="current-order">Текущий заказ</li>
+                    <li class="sidebar__list__item center" data-content-id="order-history">История заказов</li>
+                </ul>
+            </section>
+            <section class="content--container">
+                <div class="content content--active" id="my-workspace">
+                    <form action="" id="profile-update-form">
+                        <h2>Персональные данные</h2>
+                        <div class="input-group">
+                            <label for="phone" class="textlabel">Мобильный телефон</label>
+                            <input type="text" class="textinput" name="phone" id="phone">
+                        </div>
+                        <div class="input-group">
+                            <label for="fullName" class="textlabel">Имя пользователя</label>
+                            <input type="text" class="textinput" name="fullName" id="fullName">
+                        </div>
+                        <div class="input-group">
+                            <label for="email" class="textlabel">Email</label>
+                            <input type="email" class="textinput" name="email" id="email" disabled value="adrian@email.com">
+                        </div>
+                        <button type="submit" class="submit-btn" id="profile-update-submit-btn">Обновить</button>
+                    </form>
+                    <div class="balance--container">
+                        <h2>Мой баланс</h2>
+                        <span class="balance">0.2 BYN</span>
+                        <!-- <br>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <input type="number" class="textinput" id="addup-balance-input" min="0.5" max="100" step="0.01" style="padding-block: 0.35em;">
+                            <button class="addup-balance-btn">+</button>
+                        </div> -->
+                    </div>
+                    <div class="my-transactions--container">
+                        <h2 class="my-transactions--header">Мои транзакции</h2>
+                        <ul class="my-transactions">
+                            <div class="my-transactions__table-header">
+                                <h4>Дата</h4>
+                                <h4>Описание</h4>
+                                <h4>Сумма</h4>
+                            </div>
+                            <!-- items -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="content" id="free-orders-list">
+                    <div class="order-list--container">
+                        <h2>Свободные заказы</h2>
+                        <ul class="order-list">
+                            <!-- items -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="content" id="current-order">
+                    <div class="order-list__item current-order">
+                        <div class="order-list__item--header">
+                            <div class="order-list__item__name">Наименование товара</div>
+                            <div class="order-list__item__weight">Вес: 15 кг</div>
+                            <div class="order-list__item__action-item--container">
+                                <button class="order-list__item__action-item"><i class="fas fa-caret-down"></i></button>
+                                <button class="order-list__item__action-item"><i class="far fa-check-circle"></i></button>
+                                <button class="order-list__item__action-item"><i class="fas fa-ban"></i></button>
+                            </div>
+                        </div>
+                        <div class="order-list__item__price">Цена: 25.02 BYN</div>
+                        <div class="order-list__item__sender">Отправитель: margo@gmail.com +375445756834</div>
+                        <div class="order-list__item__courier-payment">Оплата курьера: 15.15 BYN</div>
+                        <div class="order-list__item__recipient">Получатель: black4ire@gmail.com +375336208959</div>
+                        <hr class="order-list__item--inside-separator">
+                        <div class="order-list__item__address-from">Откуда: ул. Маяковского, д. 117/2, кв. 20</div>
+                        <div class="order-list__item__time-to-pickup">Забрать: 22 янв. 2023 10:35</div>
+                        <div class="order-list__item__address-to">Куда: ул. Леонида Беды, д. 98, кв. 110</div>
+                        <div class="order-list__item__time-to-deliver">Время доставки: 22 янв. 2023 15:40</div>
+                        <div class="order-list__item__detail">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam magni voluptate rem temporibus 
+                            officia nesciunt beatae neque voluptatibus, libero eligendi eos nobis illo impedit odio quaerat 
+                            soluta ex cupiditate obcaecati ab accusantium quia blanditiis atque doloremque repudiandae! 
+                            Aliquam, sint fuga. Soluta, adipisci? Qui id adipisci, cumque facere eligendi tenetur! Hic.
+                        </div>
+                    </div>
+                </div>
+                <div class="content" id="order-history">
+                    <div class="order-list--container">
+                        <h2>История заказов</h2>
+                        <ul class="order-list">
+                            <!-- items -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOASTS -->
+            <div class="toast--error">
+                ERRORORORORORORRO
+            </div>
+            <div class="toast--ok">
+                OKOKOKOKOK
+            </div>
+        </div>
+    </main>
+    <script src="js/courier.js"></script>
+</body>
+</html>

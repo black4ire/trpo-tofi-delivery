@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <title>Customer page</title>
+</head>
+<body class="dark">
+    <nav class="navbar">
+        <ul class="navbar--list">
+            <li class="navbar__item navbar__item--first"><a href="/index.html">Домой</a></li>
+            <li class="navbar__item"><a href="/login.html">Выйти</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="main-grid">
+            <section class="sidebar--container">
+                <ul class="sidebar__list">
+                    <li class="sidebar__list__item center sidebar__list__item--active" data-content-id="my-workspace">Личный кабинет</li>
+                    <li class="sidebar__list__item center" data-content-id="my-orders-list">Мои заказы</li>
+                    <li class="sidebar__list__item center" data-content-id="order-history">История заказов</li>
+                    <li class="sidebar__list__item center" data-content-id="create-update-order">Новый заказ</li>
+                </ul>
+            </section>
+            <section class="content--container">
+                <div class="content" id="my-workspace">
+                    <form action="" method="post" id="profile-update-form">
+                        <h2>Персональные данные</h2>
+                        <div class="input-group">
+                            <label for="phone" class="textlabel">Мобильный телефон</label>
+                            <input type="text" class="textinput" name="phone" id="phone">
+                        </div>
+                        <div class="input-group">
+                            <label for="fullName" class="textlabel">Имя пользователя</label>
+                            <input type="text" class="textinput" name="fullName" id="fullName">
+                        </div>
+                        <div class="input-group">
+                            <label for="email" class="textlabel">Email</label>
+                            <input type="email" class="textinput" name="email" id="email" disabled value="adrian@email.com">
+                        </div>
+                        <button type="submit" class="submit-btn" id="profile-update-submit-btn">Обновить</button>
+                    </form>
+                    <div class="balance--container">
+                        <h2>Мой баланс</h2>
+                        <span class="balance">0.2 BYN</span>
+                        <br>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <input type="number" class="textinput" id="addup-balance-input" min="0.5" max="100" step="0.01" style="padding-block: 0.35em;">
+                            <button class="addup-balance-btn">+</button>
+                        </div>
+                    </div>
+                    <div class="my-transactions--container">
+                        <h2 class="my-transactions--header">Мои транзакции</h2>
+                        <ul class="my-transactions">
+                            <div class="my-transactions__table-header">
+                                <h4>Дата</h4>
+                                <h4>Описание</h4>
+                                <h4>Сумма</h4>
+                            </div>
+                            <!-- items -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="content" id="my-orders-list">
+                    <div class="order-list--container">
+                        <h2>Мои заказы</h2>
+                        <ul class="order-list">
+                            <!-- items -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="content" id="order-history">
+                    <div class="order-list--container">
+                        <h2>История заказов</h2>
+                        <ul class="order-list">
+                            <!-- items -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="content content--active" id="create-update-order">
+                    <form action="" method="post" id="order-create-update-form" data-action="create">
+                        <h2>Новый заказ</h2>
+                        <div class="input-group">
+                            <label for="name" class="textlabel">Наименование товара</label>
+                            <input type="text" required class="textinput" name="name" id="name">
+                        </div>
+                        <div class="input-group">
+                            <label for="weight" class="textlabel">Вес кг</label>
+                            <input type="number" required class="textinput" name="weight" id="weight" min="1" max="15" value="2" step="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="price" class="textlabel">Цена BYN</label>
+                            <input type="number" required disabled class="textinput" name="price" id="price" min="0.5" max="1000" value="10.00" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="courier-payment" class="textlabel">Оплата курьеру BYN</label>
+                            <input type="number" required class="textinput" name="courier-payment" id="courier-payment" min="0.5" max="1000" value="5.00" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="address-from" class="textlabel">Откуда</label>
+                            <input type="text" required class="textinput" name="address-from" id="address-from">
+                        </div>
+                        <div class="input-group">
+                            <label for="address-to" class="textlabel">Куда</label>
+                            <input type="text" required class="textinput" name="address-to" id="address-to">
+                        </div>
+                        <!-- <div class="input-group">
+                            <label for="time-to-pickup" class="textlabel">Забрать</label>
+                            <input type="datetime-local" required class="flatpickr flatpickr-input" name="time-to-pickup" id="time-to-pickup" placeholder="Выберите дату и время">
+                        </div>
+                        <div class="input-group">
+                            <label for="time-to-deliver" class="textlabel">Доставить</label>
+                            <input type="datetime-local" required class="flatpickr flatpickr-input" name="time-to-deliver" id="time-to-deliver" placeholder="Выберите дату и время">
+                        </div> -->
+                        <div class="input-group">
+                            <label for="receiver-phone" class="textlabel">Номер телефона получателя</label>
+                            <input type="text" required class="textinput" name="receiver-phone" id="receiver-phone">
+                        </div>
+                        <div class="input-group">
+                            <label for="description" class="textlabel">Описание</label>
+                            <textarea type="text" required class="textinput" name="description" id="description" rows="15"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="order-submit-btn">Добавить</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- TOASTS -->
+            <div class="toast--error">
+                ERRORORORORORORRO
+            </div>
+            <div class="toast--ok">
+                OKOKOKOKOK
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+    <script src="js/customer.js"></script>
+</body>
+</html>
